@@ -3,7 +3,7 @@ import { Button, Card, CardSection, Input } from './common';
 
 
 class LoginForm extends Component {
-    state = { email: '' };
+    state = { email: '', password: '' };
 
     render() {
         return (
@@ -17,8 +17,15 @@ class LoginForm extends Component {
                    />
                </CardSection>
 
-               <CardSection />
-
+               <CardSection>
+                <Input
+                    secureTextEntry
+                    placeholder={'enter your password'}
+                    label={'Password'}
+                    value={this.state.password}
+                    onChangeText={password => this.setState({ password })} // shorthand {text: text}
+                />
+               </CardSection>
                <CardSection>
                    <Button>
                        Log in 
